@@ -1,0 +1,80 @@
+@mixin btn($width: 256px, $height: 56px) {
+  min-height: $height;
+  width: $width;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+  border: 1px solid $white;
+  border-radius: 56px;
+  transition: all 0.5s;
+  &:hover {
+    border-color: $pink;
+    background-color: $pink;
+    color: $black;
+    transform: translateY(-6px);
+    box-shadow: 0 0 10px $super-dark-pink;
+  }
+  &:active {
+    border-color: $dark-pink;
+    background-color: $dark-pink;
+    color: $black;
+  }
+}
+
+@mixin hover {
+  color: $pink;
+}
+
+@mixin active {
+  color: $dark-pink;
+}
+
+@mixin hover-svg {
+  filter: brightness(0) saturate(100%) invert(99%) sepia(88%) saturate(5829%)
+    hue-rotate(294deg) brightness(101%) contrast(110%);
+}
+
+@mixin btn-svg($width, $height, $bg-url) {
+  -webkit-mask: $bg-url;
+  mask: $bg-url;
+  width: $width;
+  height: $height;
+  background-color: $white;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  transition: 0.5s;
+  &:hover {
+    background-color: $pink;
+  }
+
+  &:active {
+    background-color: $dark-pink;
+  }
+}
+
+@mixin range($color1, $color2) {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    $color1 0%,
+    $color1 100%,
+    $color2 100%,
+    $color2 100%
+  );
+  border-radius: 10px;
+  -webkit-appearance: none;
+  transition: 0.5s;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: $white;
+    transition: 0.2s ease-in-out;
+  }
+}

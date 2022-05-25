@@ -1,0 +1,15 @@
+@import './base/normalize';
+@import './helpers/variables';
+@import './base/typography';
+@import './helpers/mixins';
+
+@import './common/general';
+@import './components/header';
+@import './components/main';
+@import './components/footer';
+@import './components/settings';
+@import './components/categories';
+@import './components/score';
+@import './components/question';
+@import './components/popup';
+@import './components/mini-quiz';

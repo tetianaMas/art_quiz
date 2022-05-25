@@ -1,0 +1,36 @@
+.mini-quiz {
+  .main .container {
+    padding-top: 150px;
+    flex-direction: row;
+  }
+
+  .card-img {
+    transition: all 0.5s;
+  }
+
+  .card-header {
+    margin-bottom: 30px;
+    justify-content: center;
+    .title-sm {
+      font-size: 22px;
+      text-align: center;
+    }
+  }
+
+  .card:hover {
+    .card-img {
+      filter: grayscale(0);
+    }
+  }
+}
+
+@media screen and (min-width: 1045px) {
+  .mini-quiz {
+    .card {
+      margin-right: 20px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

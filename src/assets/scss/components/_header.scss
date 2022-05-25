@@ -1,0 +1,31 @@
+.page-header {
+  position: relative;
+  display: flex;
+  padding: 20px 0;
+  .nav .nav-btn .btn-link {
+    &:hover {
+      border: none;
+      transform: translateY(0);
+      box-shadow: none;
+    }
+  }
+}
+
+.settings-btn {
+  @include btn-svg(34px, 34px, url('./assets/svg/settings.svg'));
+  position: absolute;
+  top: 50%;
+  right: 0;
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .settings-btn {
+    top: 50px;
+    right: 70px;
+    width: 36px;
+    height: 36px;
+  }
+}

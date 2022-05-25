@@ -1,0 +1,314 @@
+.score {
+  .page-header {
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    .nav {
+      display: none;
+    }
+
+    .return-btn {
+      @include btn-svg(34px, 34px, url('./assets/svg/return-btn.svg'));
+      display: block;
+    }
+
+    .btn-link {
+      line-height: 54px;
+      border: none;
+      transition: 0.3s;
+      &:hover,
+      &:active {
+        background-color: transparent;
+        color: inherit;
+      }
+    }
+
+    .return-btn {
+      order: 2;
+    }
+    .logo {
+      order: 1;
+    }
+    .settings-btn {
+      order: 4;
+    }
+    .nav {
+      padding: 14px 45px 0;
+      order: 3;
+    }
+
+    .title {
+      order: 2;
+    }
+  }
+
+  .title {
+    visibility: visible;
+    margin: 0 auto 0 10px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .logo-icon {
+    @include btn-svg(146px, 50px, url('./assets/svg/logo.svg'));
+  }
+
+  .settings-btn {
+    transform: translateY(-50%);
+    &:hover {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  .main {
+    padding-top: 0;
+    .cards-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      height: calc(100vh - 220px);
+      overflow-y: scroll;
+      .card {
+        position: relative;
+        opacity: 0;
+        animation: slide-up 0.5s var(--delay) ease-in forwards;
+        img {
+          display: block;
+          border-radius: 20px;
+          object-fit: cover;
+          filter: grayscale(100%);
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .card.active {
+        img {
+          filter: grayscale(0);
+        }
+        .info {
+          background-color: $pink;
+        }
+      }
+
+      .info {
+        padding: 14px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-color: $grey;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        opacity: 0;
+        transition: opacity 0.5s;
+        &-title {
+          margin-bottom: 6px;
+          font-family: 'Gilroy', sans-serif;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 18px;
+          color: $black;
+        }
+        &-text {
+          font-style: italic;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+          color: $black;
+        }
+      }
+
+      .info.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .nav {
+    padding: 14px 30px 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $white;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    &:hover {
+      @include hover;
+      cursor: pointer;
+      .home-icon,
+      .categories-icon,
+      .score-icon {
+        background-color: $pink;
+      }
+    }
+
+    &:active {
+      @include active;
+      .home-icon,
+      .categories-icon,
+      .score-icon {
+        background-color: $dark-pink;
+      }
+    }
+
+    .btn-link {
+      font-size: 16px;
+      border: none;
+      transition: 0.3s;
+      min-height: auto;
+      height: auto;
+      border: none;
+      font-size: inherit;
+      line-height: 27px;
+      &:hover,
+      &:active {
+        background-color: transparent;
+        color: inherit;
+      }
+    }
+  }
+
+  .nav-btn.checked {
+    .home-icon,
+    .categories-icon,
+    .score-icon {
+      background-color: $pink;
+    }
+    color: $pink;
+  }
+
+  .home-icon {
+    @include btn-svg(28px, 28px, url('./assets/svg/home.svg'));
+  }
+
+  .categories-icon {
+    @include btn-svg(28px, 28px, url('./assets/svg/categories.svg'));
+  }
+
+  .best-res {
+    margin: 20px 0;
+    font-family: 'Gilroy', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: $pink;
+  }
+
+  .shine {
+    position: relative;
+    font-family: 'Gilroy', sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
+    overflow: hidden;
+    background: linear-gradient(90deg, $black, $pink, $black);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    animation: textShine 3s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .score {
+    .page-header {
+      .return-btn {
+        margin-left: 65px;
+        order: 2;
+      }
+      .logo {
+        order: 1;
+      }
+      .title {
+        margin: 0 auto 0 10px;
+        order: 2;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 28px;
+      }
+      .nav {
+        margin-right: auto;
+        margin-left: 120px;
+        padding: 0;
+        width: auto;
+        display: flex;
+        order: 3;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 18px;
+        border: none;
+        &-btn {
+          margin-right: 40px;
+          font-size: 22px;
+          &:last-of-type {
+            margin-right: 0;
+          }
+          .btn-link {
+            font-size: inherit;
+          }
+        }
+      }
+
+      .settings-btn {
+        order: 4;
+      }
+    }
+    .main {
+      .cards-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        .card {
+          img {
+            max-width: 300px;
+            height: 100%;
+          }
+        }
+
+        .info {
+          padding: 20px;
+          &-title {
+            font-size: 22px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+    .shine {
+      font-size: 22px;
+    }
+  }
+}
+
+@media screen and (min-width: 1660px) {
+  .score {
+    .main {
+      .cards-wrapper {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 350px);
+        align-items: flex-start;
+        .card {
+          img,
+          .info {
+            max-width: 300px;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
