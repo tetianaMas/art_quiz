@@ -1,9 +1,8 @@
 # About Art-quiz
 
-![art-quiz0](https://user-images.githubusercontent.com/76964682/170358367-f0063872-5b2e-48c8-91b0-3c11c235ede4.JPG)
-
 Art-quiz is a collection of questions and answers providing some of the most interesting facts in fine art. Take a quiz to test your knowledge of the most famous artists of all time! This project was created as a part of the learning process in the [RSSchool](https://rs.school/).
 
+![art-quiz0](https://user-images.githubusercontent.com/76964682/170358367-f0063872-5b2e-48c8-91b0-3c11c235ede4.JPG)
 ![art-quiz1](https://user-images.githubusercontent.com/76964682/170358401-34fbb706-199e-49f7-8628-6bc5f5c6d307.JPG)
 ![art-quiz2](https://user-images.githubusercontent.com/76964682/170358435-9268e889-3e6c-4777-ba9e-d89a73fb4a7c.JPG)
 
