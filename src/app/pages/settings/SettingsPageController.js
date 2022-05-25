@@ -3,6 +3,7 @@ import Utils from '../../services/Utils';
 import soundStorage from './soundStorage';
 import router from '../../routes';
 import langManager from '../../services/lang/langManager';
+import Constants from '../../services/constants';
 
 export default class SettingsPageController {
   constructor(model, view) {
@@ -83,13 +84,13 @@ export default class SettingsPageController {
     }
 
     if (e.target.classList.contains('eng-js')) {
-      langManager.setLang('eng');
-      this.model.setLang('eng');
+      langManager.setLang(Constants.lang.eng);
+      this.model.setLang(Constants.lang.eng);
     }
 
     if (e.target.classList.contains('rus-js')) {
-      langManager.setLang('rus');
-      this.model.setLang('rus');
+      langManager.setLang(Constants.lang.rus);
+      this.model.setLang(Constants.lang.rus);
     }
   }
 

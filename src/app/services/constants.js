@@ -58,7 +58,14 @@ export default class Constants {
       isTimeGame: false,
       timeToAnswer: Constants.settingsMin,
       quesInMiniQuiz: Constants.questionsAmountInRound,
-      lang: 'rus',
+      lang: Constants.lang.eng,
+    };
+  }
+
+  static get lang() {
+    return {
+      eng: 'eng',
+      rus: 'rus',
     };
   }
 }
