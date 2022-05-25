@@ -76,6 +76,8 @@ export default class MiniQuizModel {
     this.createdQuestions = Utils.shuffleArr(this.createdQuestions);
     this.createdQuestionsRight = rightQues.concat(wrongQues);
 
+    console.log(this.createdQuestions);
+
     await this.loadImages(this.createdQuestions);
   }
 
@@ -195,7 +197,7 @@ export default class MiniQuizModel {
     if (!bestRes) {
       return [];
     }
-    await this.loadImages(bestRes.questions);
+    await this.loadImages(bestRes.questions || []);
     bestRes.questions = this.createdQuestions;
 
     return bestRes;
